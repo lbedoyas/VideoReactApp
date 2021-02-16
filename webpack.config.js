@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable indent */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -33,6 +34,14 @@ module.exports = {
                     'css-loader',
                     'sass-loader',
                 ],
+            },
+            {
+                test: /\.(png|gif|jpg)$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: { name: 'assets/[hash].[ext]' },
+                    // eslint-disable-next-line array-bracket-spacing
+                }, ],
             },
         ],
     },
